@@ -34,10 +34,3 @@ class Test
         // using elementAt() and hashtable elements using get() 
     } 
 } 
-// this was the results after I ran the file.
-/* run:
-1
-1
-Ryan
-BUILD SUCCESSFUL (total time: 0 seconds)
-*/
