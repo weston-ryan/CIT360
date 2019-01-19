@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Ryan Weston - CIT 360 
+ * Gueue example
  */
 // Java program to show whey collection framework was needed 
 import java.io.*; 
@@ -22,10 +21,11 @@ class Test
   
         // Array instance creation requires [], while Vector 
         // and hastable require () 
-        // Vector element insertion requires addElement(), but 
-        // hashtable element insertion requires put() 
+        // Vector element insertion requires addElement() 
+        // but hashtable element insertion requires put() 
   
-        // Accessing first element of array, vector and hashtable 
+        // Accessing first element of array, vector and hashtable
+        // and then printing the outcome of the results
         System.out.println(arr[0]); 
         System.out.println(v.elementAt(0)); 
         System.out.println(h.get(1)); 
