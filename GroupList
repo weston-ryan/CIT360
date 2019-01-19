@@ -6,7 +6,7 @@
 import java.util.GroupList;
 import java.util.Queue;
 
-public class QueueExample {
+public class GroupList {
     public static void main(String[] args) {
         // Create and initialize a Queue using a LinkedList
         Queue<String> waitingQueue = new GroupList<>();
