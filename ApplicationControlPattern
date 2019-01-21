@@ -77,7 +77,7 @@ public class ApplicationControlPattern {
     }
     
     
-    /*
+    /* The output after I ran this file was:
    run:
 Simple HashMap: Key 'Ryan' has value = 1
 Simple HashMap: Key 'Heather' has value = 2
