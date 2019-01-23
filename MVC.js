@@ -49,8 +49,8 @@ public class MVC {
                 //create Controller and then tell it about Model and View.
                 //then initialise the model
 		Controller myController = new Controller();
-		myController.addModel(myModel);
-		myController.addView(myView);
+		myController.addModel("my Model");
+		myController.addView("my View");
 		myController.initModel(start_value);
 
 		//tell View about Controller 
