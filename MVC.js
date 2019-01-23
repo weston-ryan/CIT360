@@ -45,12 +45,7 @@ public class MVC {
 
 		//tell Model about View. 
 		myModel.addObserver(myView);
-                
-                // if I want the model to initialize then run this:
-                // however, I have it set up to initialize below
-                //so I've commented this part out.
-                //myModel.setValue(start_value);
-                
+                               
                 //create Controller and then tell it about Model and View.
                 //then initialise the model
 		Controller myController = new Controller();
