@@ -39,9 +39,9 @@ public interface Hibernate {
     // get the asset by title (the department title)
     // I tried using a for asset below, but it was too confusing so I used "b"
     public Asset getAssetByTitle(String title) {
-        TypedQuery<Asset> a = em.createQuery("SELECT b FROM Asset b WHERE b.title = :title", Asset.class);
-        a.setParameter("title", title);
-        return a.getSingleResult();
+        TypedQuery<Asset> b = em.createQuery("SELECT b FROM Asset b WHERE b.title = :title", Asset.class);
+        b.setParameter("title", title);
+        return b.getSingleResult();
     }
     // Save the asset
     public Asset saveAsset(Asset b) {
