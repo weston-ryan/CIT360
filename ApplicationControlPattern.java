@@ -10,8 +10,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Scanner;
 import java.util.Set;
+import static javax.swing.text.StyleConstants.ModelAttribute;
 
 public class ApplicationControlPattern {
     
@@ -21,18 +21,43 @@ public class ApplicationControlPattern {
      */
     public static void main(String[] args) {
        // hashmap declaration with default size and load factor
-       HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
+       HashMap<String, Integer> hashMap = new HashMap<>();
         // a hashmap with multiple values and a default size & load factor
         //multiple values will create an array list
-       HashMap<String, ArrayList<String>> multiMap = new HashMap<String, ArrayList<String>>();
+       HashMap<String, ArrayList<String>> multiMap = new HashMap<>();
        
        // put elements into the hashmap (family name)
-       hashMap.put("Ryan", new Integer(1));
-       hashMap.put("Heather", new Integer(2));
-       hashMap.put("Lilly", new Integer(3));
-       hashMap.put("Kanyon", new Integer(4));
-       hashMap.put("Cole", new Integer(5));
-       
+       hashMap.put("Ryan", 1);
+       hashMap.put("Heather", 2);
+       hashMap.put("Lilly", 3);
+       hashMap.put("Kanyon", 4);
+       hashMap.put("Cole", 5);
+     
+      //create a greating controller for the elements in the ArrayList
+      //this controller handles get and post requests and adds an
+      //instance of a HashMap greeting, which stores the object of type greeting.
+    @Controller
+ class GreetingController {
+
+    private static final Map<int,Greeting> hashMap = new HashMap<>();
+
+    @RequestMapping(value="/greeting", method=RequestMethod.GET)
+    public String greetingForm(Model model,  @RequestParam(value = "greetingId", required = false) Integer greetingId) {
+        Greeting greeting = hashMap.get(greetingId)
+                return greeting.getGreeting();
+    }
+
+    @RequestMapping(value="/greeting", method=RequestMethod.POST)
+    public String greetingSubmit(@ModelAttribute Greeting greeting, Model model) {
+        model.addAttribute("greeting", greeting);
+        int count = hashMap.size();
+        hashMap.put((count+1),greeting);
+        return "result";
+    }
+}
+
+
+
        //take a value of a specific key - or give it a value
        System.out.println("Simple HashMap: Key 'Ryan' has value = " + hashMap.get("Ryan"));
        System.out.println("Simple HashMap: Key 'Heather' has value = " + hashMap.get("Heather"));
@@ -49,7 +74,7 @@ public class ApplicationControlPattern {
       
        //create an arrayList to store values 
        // the values are the favorite color of the elements 
-       ArrayList<String> listOne = new ArrayList<String>();
+       ArrayList<String> listOne = new ArrayList<>();
        listOne.add("Green");
        listOne.add("Blue");
        listOne.add("Blue");
@@ -75,24 +100,4 @@ public class ApplicationControlPattern {
         System.out.println("Key = '" + key + "' has values: " + values);
       }
     }
-    
-    
-    /* The output after I ran this file was:
-   run:
-Simple HashMap: Key 'Ryan' has value = 1
-Simple HashMap: Key 'Heather' has value = 2
-Simple HashMap: Key 'Lilly' has value = 3
-Simple HashMap: Key 'Kanyon' has value = 4
-Simple HashMap: Key 'Cole' has value = 5
-Simple HashMap containes value '1' - true
-Simple HashMap containes value '2' - true
-Simple HashMap containes value '3' - true
-Simple HashMap containes value '4' - true
-Simple HashMap containes value '5' - true
-
-HashMap with Multiple Values
-Key = 'Their Favorite color' has values: [Green, Blue, Blue, Red, Green]
-BUILD SUCCESSFUL (total time: 0 seconds)
-
-*/
 }
