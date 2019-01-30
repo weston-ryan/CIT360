@@ -14,8 +14,6 @@ import java.util.Set;
 import static javax.swing.text.StyleConstants.ModelAttribute;
 
 public class ApplicationControlPattern {
-    
-
     /**
      * @param args the command line arguments
      */
@@ -55,9 +53,6 @@ public class ApplicationControlPattern {
         return "result";
     }
 }
-
-
-
        //take a value of a specific key - or give it a value
        System.out.println("Simple HashMap: Key 'Ryan' has value = " + hashMap.get("Ryan"));
        System.out.println("Simple HashMap: Key 'Heather' has value = " + hashMap.get("Heather"));
