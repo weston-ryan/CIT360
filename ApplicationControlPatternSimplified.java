@@ -17,6 +17,9 @@ public class ApplicationControllerSimplified {
     }
 
     public void mapCommand(String aCommand, Handler acHandler){
-        handlerMap.put(aCommand,acHandler);
+        //handlerMap.put(aCommand,acHandler);
+        handlerMap.put("A", new AreaOfHouse());
+        handlerMap.put("B", new DrivwaySize());  
+        
     }
 }
