@@ -32,6 +32,13 @@ class EnterListener implements ActionListener{
          theView.setPizzaName();
          theView.setCustomerName();
          }
-         else {
-         
-         }
+         else { theModel.saveCustomerInfo(theView.getPizzaTopping(), theView.getCustomerName());
+	       theView.setPizzaTopping();
+	       theView.setCustomerName();
+	      }
+	catch(Exception ex){
+         System.out.println(ex);
+	       theView.displayErrorMessage("Pizza is fried... try again);}
+      }
+   }
+}
