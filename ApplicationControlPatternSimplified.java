@@ -1,11 +1,12 @@
-package AConDemo;
+package ApplicationControlPatternSimplified;
 
 /**
+* I started over and simplified this to show "basic" understanding
  */
 
 import java.util.HashMap;
 
-public class ApplicationController {
+public class ApplicationControllerSimplified {
     private final HashMap<String,Handler> handlerMap = new HashMap();
 
     public void handleRequest(String command, HashMap<String,Object> data){
