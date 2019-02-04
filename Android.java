@@ -11,6 +11,6 @@ public class AndroidExample {
     public void useAppContext() throws Exception {
                Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.neldo.atm", appContext.getPackageName());
+        assertEquals("com.example.android.app", appContext.getPackageName());
     }
 }
