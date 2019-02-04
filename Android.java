@@ -1,4 +1,4 @@
-package com.example.neldo.atm;
+package com.example.android.app;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
