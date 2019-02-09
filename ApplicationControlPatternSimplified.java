@@ -6,21 +6,23 @@ package ApplicationControlPatternSimplified;
  */
 
 import java.util.HashMap;
+import java.util.logging.Handler;
 
-public class ApplicationControllerSimplified {
+public class ApplicationControlPatternSimplified {
     private final HashMap<String,Handler> handlerMap = new HashMap();
 
     //
     public void handleRequest(String command, HashMap<String,Object> data){
         Handler handler = handlerMap.get(command);
+        Object aCommandHandler = null;
         if (aCommandHandler != null){
             aCommandHandler.handleIt(data);
         }
     }
-    //to create something to calculate the area of a house or driveway for future use.
+    //to create something to calculate the area of an office for future use.
     public void mapCommand(String aCommand, Handler aHandler){
         //handlerMap.put(aCommand,acHandler);
-        handlerMap.put("A", new AreaOfHouse());
-        handlerMap.put("B", new DrivwaySize());  
+        Handler put = handlerMap.put("A", new OfficeArea());
+       // HashMap<String, Handler> put = handlerMap.put("B", new CubicleArea());  
        }
 }
