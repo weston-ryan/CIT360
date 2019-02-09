@@ -18,7 +18,8 @@ public class Servlet {
         //hard coded username and password.  It will check if the user name and password match
         // if they match it will proceed to the iccu-member page.  If not, it will redirect to the access denied page.
     protected void dopost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String user = request.getParameter("user");
+		System.out.println("Please enter your username and password");
+	    	String user = request.getParameter("user");
                 String password = request.getParameter("password");
                 if(user.equals("rweston") && password.equals("47LeguesUnder!")){
                     response.setHeader("login", "success");
