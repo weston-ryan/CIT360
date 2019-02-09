@@ -26,16 +26,14 @@ public class ManageAssets {
       Integer assetId2 = ME.addAsset("Infastructure", 1002);
       Integer assetId3 = ME.addAsset("DataCenter", 1003);
 
-      /* List down all the Assets */
+      /* - List down all the Assets
+         - Update the Asset's Records
+	 - Delete an Asset from the database
+	 - List down new list of assets
+	*/
       ME.listAsset();
-
-      /* Update Asset's records */
-      ME.updateAsset(assetId1, 5000);
-
-      /* Delete an Asset from the database */
+      ME.updateAsset(assetId1, 3005);
       ME.deleteAsset(assetId2);
-
-      /* List down new list of the Assets */
       ME.listAsset();
    }
    
