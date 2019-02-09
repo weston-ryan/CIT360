@@ -12,72 +12,72 @@ import java.util.List;
 /**
  *
  * I'm keeping this very simple, because it was hard for me to grasp the idea
- * let alone put it into something that works.  I was trying to create some kind 
- * of Facebook Profile update or something along those lines.  Status update... something....
+ * let alone put it into something that works.
  */
 public class JSONJava {
 
     /**
      * JSON = JavaScript Object Notation
+     *
      * @param args
      */
     public static void main(String[] args) {
-		JSONExample obj = new JSONExample();
-		obj.run();
-	}
+        JSONExample obj = new JSONExample();
+        obj.run();
+    }
 
-	private void run() {
-		ObjectMapper mapper = new ObjectMapper();
+    private void run() {
+        ObjectMapper mapper = new ObjectMapper();
 
-                 //create a new object called Facebook
-		Facebook facebook = createObject();
+        //create a new object called Facebook
+        Facebook facebook = createObject();
 
-		try {
+        try {
 
-			// an array in ordered sequence of values.  
-			System.out.println("Regular View");
-			String regularView = mapper.writerWithView(Views.Normal.class).writeValueAsString(facebook);
-			System.out.println(regularView);
+            // an array in ordered sequence of values.  
+            System.out.println("Regular View");
+            String regularView = mapper.writerWithView(Views.Normal.class).writeValueAsString(facebook);
+            System.out.println(regularView);
 
-                        //convert text into an object:
-			String jsonInString = "{\"name\":\"Ryan Weston\",\"age\":41,\"status\":\"Student\",\"scholarship\":9250,\"profile\":[\"Picture\"]}";
-			Facebook normalFacebook = mapper.readerWithView(Views.Normal.class).forType(Facebook.class).readValue(jsonInString);
-			System.out.println(normalFacebook);
+            //convert text into an object:
+            String jsonInString = "{\"name\":\"Ryan Weston\",\"age\":41,\"status\":\"Student\",\"scholarship\":9250,\"profile\":[\"Picture\"]}";
+            Facebook normalFacebook = mapper.readerWithView(Views.Normal.class).forType(Facebook.class).readValue(jsonInString);
+            System.out.println(normalFacebook);
 
-			// Display everything
-			System.out.println("\nEverything View");
-			String displayEverythingView = mapper.writerWithView(Views.Everything.class).writeValueAsString(facebook);
-			System.out.println(displayEverythingView);
+            // Display everything
+            System.out.println("\nEverything View");
+            String displayEverythingView = mapper.writerWithView(Views.Everything.class).writeValueAsString(facebook);
+            System.out.println(displayEverythingView);
 
-			Facebook EverythingFacebook = mapper.readerWithView(Views.Everything.class).forType(Facebook.class).readValue(jsonInString);
-			System.out.println(EverythingFacebook);
+            Facebook EverythingFacebook = mapper.readerWithView(Views.Everything.class).forType(Facebook.class).readValue(jsonInString);
+            System.out.println(EverythingFacebook);
 
-		} catch (JsonGenerationException | IOException e) {
-		}
-	}
+        } catch (JsonGenerationException | IOException e) {
+        }
+    }
 
-        // insert objects or actual data into the application
-        //send data as an object...
-	private Facebook createObject() {
+    // insert objects or actual data into the application
+    //send data as an object...
+    private Facebook createObject() {
 
-		Facebook facebook = new Facebook();
+        Facebook facebook = new Facebook();
 
-		facebook.setName("Ryan Weston");
-		facebook.setAge(41);
-		facebook.setStatus("Student");
-		facebook.setScholarship(new BigDecimal("9250"));
+        facebook.setName("Ryan Weston");
+        facebook.setAge(41);
+        facebook.setStatus("Student");
+        facebook.setScholarship(new BigDecimal("9250"));
 
-		List<String> profile = new ArrayList<>();
-		profile.add("Picture");
-		
+        List<String> profile = new ArrayList<>();
+        profile.add("Picture");
 
-		facebook.setProfile(profile);
+        facebook.setProfile(profile);
 
-		return facebook;
+        return facebook;
 
-	}
+    }
 
 }
 /* output 
 Everything View {"name" : "Ryan Weston", "age":41, "Status" :"Student", "Scholarship" :"9250", "Profile" : "Picture"}
 */
+
