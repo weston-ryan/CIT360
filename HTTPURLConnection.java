@@ -18,8 +18,7 @@ public class HTTPURLConnection {
             /* This will pull up the first 20 header fields.  If there are
              no more fields, then it will show "null = null"
             */
-            for (int i = 1; i <= 20; i++) {
-                System.out.println(huc.getHeaderFieldKey(i) + " = " + huc.getHeaderField(i));
+            for (int i = 1; i <= 20; i++) {System.out.println(huc.getHeaderFieldKey(i) + " = " + huc.getHeaderField(i));
             }
             // Using a multi catch phrase exception and closing the connection.
             huc.disconnect();
