@@ -3,7 +3,7 @@
  *
  * @author westo
  */
-public class Servlet {
+public class Servlet EXTENDS HttpServlet{
 
     /**
      * @param args the command line arguments
