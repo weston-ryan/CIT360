@@ -4,11 +4,9 @@
  * @author westo
  */
 @WebServlet(name = "AssetServlet", urlPatterns = "/addAssetServlet")
-public class Servlet extends HttpServlet{
+public class AddAssetServlet extends HttpServlet{
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
         // TODO code application logic here
         //dispatches requests to the methods doGet and doPost
@@ -18,15 +16,16 @@ public class Servlet extends HttpServlet{
     }
         //hard coded username and password.  It will check if the user name and password match
         // if they match it will proceed to the iccu-member page.  If not, it will redirect to the access denied page.
-    protected void dopost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+	 protected void dopost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Please enter your username and password");
 	    	String user = request.getParameter("user");
                 String password = request.getParameter("password");
-                if(user.equals("rweston") && password.equals("47LeguesUnder!")){
+               try(user.equals("rweston") && password.equals("47LeguesUnder!")){
                     response.setHeader("login", "success");
                     response.sendRedirect("iccu-member.jsp")
                     }           
-                else {
+                catch {Exception e){
                     response.sendRedirect("accessDenied.jsp");
                 }}
     }
