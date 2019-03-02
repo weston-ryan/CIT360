@@ -3,7 +3,8 @@
  *
  * @author westo
  */
-public class Servlet EXTENDS HttpServlet{
+@WebServlet(name = "AssetServlet", urlPatterns = "/addAssetServlet")
+public class Servlet extends HttpServlet{
 
     /**
      * @param args the command line arguments
