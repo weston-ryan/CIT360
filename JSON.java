@@ -13,11 +13,7 @@ import json.java.JSONJava;
 import json.java.JSONJava;
 import json.java.ObjectMapper;       
 
-/**
- *
- * I'm keeping this very simple, because it was hard for me to grasp the idea
- * let alone put it into something that works.
- */
+
 public class JSONJava {
 
     /**
