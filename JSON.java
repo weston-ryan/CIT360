@@ -12,6 +12,20 @@ import json.java.JSONJava;
 import json.java.JSONJava;
 import json.java.ObjectMapper;       
 
+/*
+ * Ryan Weston
+ * CIT 360 - JSON example.
+ */
+package json.java;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import json.java.JSONJava;
+import json.java.JSONJava;
+import json.java.ObjectMapper;       
+
 /**
  *
  * I'm keeping this very simple, because it was hard for me to grasp the idea
@@ -78,7 +92,7 @@ public class JSONJava {
         facebook.setProfile(profile);
 
         return facebook;
-
+//create a facebook class
     }
 
 }
