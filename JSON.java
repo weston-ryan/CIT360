@@ -11,9 +11,13 @@ import java.util.List;
 import java.util.jar.Attributes.Name;
 import json.java.JSONJava;
 import json.java.JSONJava;
-import json.java.ObjectMapper;       
+import com.fasterxml.jackson.databind.ObjectMapper;       
 
-
+/**
+ *
+ * I'm keeping this very simple, because it was hard for me to grasp the idea
+ * let alone put it into something that works.
+ */
 public class JSONJava {
 
     /**
@@ -41,7 +45,7 @@ public class JSONJava {
 
             //convert text into an object:
             String jsonInString = "{\"name\":\"Ryan Weston\",\"age\":41,\"status\":\"Student\",\"scholarship\":9250,\"profile\":[\"Picture\"]}";
-            Facebook normalFacebook = mapper.readValue(jsonInString);
+            Facebook normalFacebook = mapper.readValue(jsonInString, Facebook.class);
             System.out.println(normalFacebook);
 
             // Display everything
@@ -63,68 +67,56 @@ public class JSONJava {
     private Facebook createObject() {
 
         Facebook facebook = new Facebook();
-
+        facebook.setName("Ryan Weston");
+        facebook.setAge(41);
+        facebook.setStatus("Student");
+        facebook.setScholarship(new BigDecimal(val:"9250"));
         List<String> profile = new ArrayList<>();
         profile.add("Picture");
 
         facebook.setProfile(profile);
 
         return facebook;
+    }
 //create a facebook class
 
     public class Facebook {
-        private String facebook;
+        private String name;
+        private int age;
+        private String status;
+        private BigDecimal scholarship;
+        private List<String> profile;
+        
         public String getName(){
-            String Name = null;
-            return Name;
+            return name;
         }
-        public void setName("Ryan Weston"){
-            this.name = newName;
+        public void setName(String name){
+            this.name = name;
         }
-        public String getAge(){
-            String Age = null;
-            return Age;}
-        public void setAge("41"){
-            this.Age = newAge;
+        public int getAge(){
+            return age;
         }
-        public void getStatus(){
-            return Status;
+        public void setAge(int age){
+            this.age = age;
         }
-        public String setStatus("Student"){
-            this.Student = newstudent;
+        public String getStatus(){
+            return status;
         }
-        public void getScholarship(){
-            return Scholarship;
+        public void setStatus(String status){
+            this.status = status;
         }
-        public String setScholarship(new BigDecimal("9250")){
-            this.Scholarship = newScholarship;
+        public BigDecimal getScholarship(){
+            return scholarship;
         }
-
+        public void setScholarship(BigDecimal scholarship){
+            this.scholarship = scholarship;
+        }
+        public List<String> getProfile(){
+            return profile;
+        }
         private void setProfile(List<String> profile) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            this.profile = profile;
         }
     }
         
     }
-
-        private void setName(String ryan_Weston) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        private void setAge(int i) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        private void setStatus(String student) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        private void setScholarship(BigDecimal bigDecimal) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        private void setProfile(List<String> profile) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    }
-    
