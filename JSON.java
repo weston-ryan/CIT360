@@ -8,6 +8,11 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import json.java.JSONJava;
+import json.java.JSONJava;
+import json.java.ObjectMapper;
+        
+        
 
 /**
  *
@@ -22,7 +27,7 @@ public class JSONJava {
      * @param args
      */
     public static void main(String[] args) {
-        JSONExample obj = new JSONExample();
+        JSONJava obj = new JSONJava();
         obj.run();
     }
 
@@ -36,7 +41,7 @@ public class JSONJava {
 
             // an array in ordered sequence of values.  
             System.out.println("Regular View");
-            String regularView = mapper.writerWithView(Views.Normal.class).writeValueAsString(facebook);
+            String regularView = mapper.writeValueAsString(facebook);
             System.out.println(regularView);
 
             //convert text into an object:
@@ -49,15 +54,17 @@ public class JSONJava {
             String displayEverythingView = mapper.writerWithView(Views.Everything.class).writeValueAsString(facebook);
             System.out.println(displayEverythingView);
 
-            Facebook EverythingFacebook = mapper.readerWithView(Views.Everything.class).forType(Facebook.class).readValue(jsonInString);
+            Facebook EverythingFacebook = mapper.readValue(jsonlnString, Facebook.class);
             System.out.println(EverythingFacebook);
 
-        } catch (JsonGenerationException | IOException e) {
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     // insert objects or actual data into the application
     //send data as an object...
+    // I need name, age, status, scholarship, and profile attributes, along with getters and setters.
     private Facebook createObject() {
 
         Facebook facebook = new Facebook();
@@ -77,7 +84,3 @@ public class JSONJava {
     }
 
 }
-/* output 
-Everything View {"name" : "Ryan Weston", "age":41, "Status" :"Student", "Scholarship" :"9250", "Profile" : "Picture"}
-*/
-
