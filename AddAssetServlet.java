@@ -45,10 +45,13 @@ public class AddAssetServlet extends HttpServlet{
                                = request.getRequestDispatcher(s:"index.jsp");
                     dispatcher.forward(request, response);
                     }           
-                catch (Exception e){
+                              catch (Exception e){
                     response.sendRedirect(s: "index.jsp");
                 }
+         }
+               private Double collectAsset(Double tagNumber, Double serialNumber) {
+               return (tagNumber) + ' ' + (serialNumber);}
     }
                         
-}
+
  
