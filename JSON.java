@@ -8,20 +8,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import json.java.JSONJava;
-import json.java.JSONJava;
-import json.java.ObjectMapper;       
-
-/*
- * Ryan Weston
- * CIT 360 - JSON example.
- */
-package json.java;
-
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.jar.Attributes.Name;
 import json.java.JSONJava;
 import json.java.JSONJava;
 import json.java.ObjectMapper;       
@@ -66,7 +53,7 @@ public class JSONJava {
             String displayEverythingView = mapper.writeValueAsString(facebook);
             System.out.println(displayEverythingView);
 
-            Facebook EverythingFacebook = mapper.readValue(jsonlnString, Facebook.class);
+            Facebook EverythingFacebook = mapper.readValue(jsonInString, Facebook.class);
             System.out.println(EverythingFacebook);
 
         } catch (IOException e) {
@@ -81,11 +68,6 @@ public class JSONJava {
 
         Facebook facebook = new Facebook();
 
-        facebook.setName("Ryan Weston");
-        facebook.setAge(41);
-        facebook.setStatus("Student");
-        facebook.setScholarship(new BigDecimal("9250"));
-
         List<String> profile = new ArrayList<>();
         profile.add("Picture");
 
@@ -93,6 +75,60 @@ public class JSONJava {
 
         return facebook;
 //create a facebook class
+
+    public class Facebook {
+        private String facebook;
+        public String getName(){
+            String Name = null;
+            return Name;
+        }
+        public void setName("Ryan Weston"){
+            this.name = newName;
+        }
+        public String getAge(){
+            String Age = null;
+            return Age;}
+        public void setAge("41"){
+            this.Age = newAge;
+        }
+        public void getStatus(){
+            return Status;
+        }
+        public String setStatus("Student"){
+            this.Student = newstudent;
+        }
+        public void getScholarship(){
+            return Scholarship;
+        }
+        public String setScholarship(new BigDecimal("9250")){
+            this.Scholarship = newScholarship;
+        }
+
+        private void setProfile(List<String> profile) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+        
     }
 
-}
+        private void setName(String ryan_Weston) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void setAge(int i) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void setStatus(String student) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void setScholarship(BigDecimal bigDecimal) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void setProfile(List<String> profile) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+    
