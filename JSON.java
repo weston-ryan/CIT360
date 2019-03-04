@@ -10,9 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import json.java.JSONJava;
 import json.java.JSONJava;
-import json.java.ObjectMapper;
-        
-        
+import json.java.ObjectMapper;       
 
 /**
  *
@@ -46,12 +44,12 @@ public class JSONJava {
 
             //convert text into an object:
             String jsonInString = "{\"name\":\"Ryan Weston\",\"age\":41,\"status\":\"Student\",\"scholarship\":9250,\"profile\":[\"Picture\"]}";
-            Facebook normalFacebook = mapper.readerWithView(Views.Normal.class).forType(Facebook.class).readValue(jsonInString);
+            Facebook normalFacebook = mapper.readValue(jsonInString);
             System.out.println(normalFacebook);
 
             // Display everything
             System.out.println("\nEverything View");
-            String displayEverythingView = mapper.writerWithView(Views.Everything.class).writeValueAsString(facebook);
+            String displayEverythingView = mapper.writeValueAsString(facebook);
             System.out.println(displayEverythingView);
 
             Facebook EverythingFacebook = mapper.readValue(jsonlnString, Facebook.class);
