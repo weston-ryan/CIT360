@@ -14,7 +14,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name = "Member" table = "MEMBER">
+   <class name = "Members" table = "MEMBERS">
       
       <meta attribute = "class-description">
          This class contains the member detail. 
